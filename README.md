@@ -1,3 +1,7 @@
+# Figma Design
+
+[`Go to Figma`](https://www.figma.com/file/yscx6AQvr3R3CM4O4EMjis/LexiLearn?type=design&node-id=4%3A72&mode=dev)
+
 # create-svelte
 
 Everything you need to build a Svelte project, powered by [`create-svelte`](https://github.com/sveltejs/kit/tree/master/packages/create-svelte).
