@@ -1,4 +1,5 @@
 import type {Card} from "$lib/types/Card";
+import type PocketBase from "pocketbase";
 
 /**
  * A collection is a group of cards.
@@ -32,4 +33,14 @@ export function intoCollection(data: RawCollection): Collection {
         created: data.created,
         updated: data.updated
     }
+}
+
+export async function fetchAllCollections(pb: PocketBase): Promise<Collection[]> {
+    const data = await pb.collection("collections").getFullList<RawCollection>({ expand: "card_ids" });
+    return data.map(intoCollection);
+}
+
+export async function fetchCollection(pb: PocketBase, id: string): Promise<Collection> {
+    const data = await pb.collection("collections").getOne<RawCollection>(id, { expand: "card_ids" })
+    return intoCollection(data);
 }
