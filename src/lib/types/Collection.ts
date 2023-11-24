@@ -1,6 +1,6 @@
 import type {Card} from "$lib/types/Card";
 
-interface Collection {
+export interface Collection {
     card_ids: Card[];
     id: string;
     created: string;
