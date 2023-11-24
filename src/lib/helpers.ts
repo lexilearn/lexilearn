@@ -1,6 +1,7 @@
 import PocketBase from 'pocketbase'
 // @ts-ignore deez nuts
 import * as process from "node:process";
+import type {OAuth2Providor} from "$lib/types/types";
 
 
 const DB_URL = "https://pocketbase.oskar.global"
@@ -21,7 +22,7 @@ export async function connectDbAsAdmin(): Promise<PocketBase> {
  * Important: Please redirect to https://yourdomain.com/api/oauth2-redirect
  * @param provider
  */
-export async function connectDbAsUser(provider: string): Promise<PocketBase> {
+export async function connectDbAsUser(provider: OAuth2Providor): Promise<PocketBase> {
   const db = new PocketBase(DB_URL)
   await db.collection("users").authWithOAuth2({
     provider: provider,
