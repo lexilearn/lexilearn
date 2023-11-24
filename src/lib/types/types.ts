@@ -1,1 +1,4 @@
-export type OAuth2Providor = "github"
+export enum OAuth2Providor {
+    GITHUB = "github",
+    GOOGLE = "google",
+}
