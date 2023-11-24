@@ -1,7 +1,6 @@
 # Figma Design
 
-[`Go to Figma`](https://www.figma.com/file/yscx6AQvr3R3CM4O4EMjis/LexiLearn?type=design&node-id=4%3A72&mode=design&t=ehz6AlhhWZQNsBJ2-1)
-
+[`Go to Figma`](https://www.figma.com/file/yscx6AQvr3R3CM4O4EMjis/LexiLearn?type=design&node-id=4%3A72&mode=dev)
 
 # create-svelte
 
