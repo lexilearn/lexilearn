@@ -1,4 +1,4 @@
-export enum OAuth2Providor {
+export enum OAuth2Provider {
     GITHUB = "github",
     // GOOGLE = "google",
 }
