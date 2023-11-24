@@ -7,6 +7,6 @@ export const load: PageServerLoad = async ({params}) => {
 	const pb = await connectDbAsAdmin()
 
 	return {
-		cards: (await fetchCollection(pb,params.id)).card_ids,
+		cards: (await fetchCollection(pb, params.id)).card_ids,
 	};
 };
