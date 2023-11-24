@@ -1,91 +1,58 @@
 <script lang="ts">
 	import type { PageData } from './$types';
-	import { Input } from "./$components/ui/input";
+	import { Input } from '$lib/components/ui/input';
+	import Button from '$lib/components/ui/button/button.svelte';
+	import * as Card from '$lib/components/ui/card';
+	import MagnifyingGlass from '$lib/components/icons/MagnifyingGlass.svelte';
+	import ArrowTopRight from '$lib/components/icons/ArrowTopRight.svelte';
+	import Logo from '$lib/components/icons/Logo.svelte';
+	import Settings from '$lib/components/icons/Settings.svelte';
 	export let data: PageData;
 </script>
 
+<div class="max-w-md py-3 px-5 space-y-3">
+	<div class="flex w-full border-b pb-2 justify-between h-10 items-center">
+		<div class="h-6 w-6 cursor-pointer flex items-center justify-center">
+			<Logo />
+		</div>
 
-<div class="max-w-md">
-
-<div class="flex border w-full justify-between p-2 h-10 items-center">
-	<div class="h-6 w-6 cursor-pointer flex items-center justify-center">
-		<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
-			<path
-				d="M14.5 10C13.67 10 13 9.33 13 8.5V3.5C13 2.67 13.67 2 14.5 2C15.33 2 16 2.67 16 3.5V8.5C16 9.33 15.33 10 14.5 10Z"
-				stroke="#DA627D"
-				stroke-width="2"
-				stroke-linecap="round"
-				stroke-linejoin="round"
-			/>
-			<path
-				d="M20.5 10H19V8.5C19 7.67 19.67 7 20.5 7C21.33 7 22 7.67 22 8.5C22 9.33 21.33 10 20.5 10Z"
-				stroke="#DA627D"
-				stroke-width="2"
-				stroke-linecap="round"
-				stroke-linejoin="round"
-			/>
-			<path
-				d="M9.5 14C10.33 14 11 14.67 11 15.5V20.5C11 21.33 10.33 22 9.5 22C8.67 22 8 21.33 8 20.5V15.5C8 14.67 8.67 14 9.5 14Z"
-				stroke="#DA627D"
-				stroke-width="2"
-				stroke-linecap="round"
-				stroke-linejoin="round"
-			/>
-			<path
-				d="M3.5 14H5V15.5C5 16.33 4.33 17 3.5 17C2.67 17 2 16.33 2 15.5C2 14.67 2.67 14 3.5 14Z"
-				stroke="#DA627D"
-				stroke-width="2"
-				stroke-linecap="round"
-				stroke-linejoin="round"
-			/>
-			<path
-				d="M14 14.5C14 13.67 14.67 13 15.5 13H20.5C21.33 13 22 13.67 22 14.5C22 15.33 21.33 16 20.5 16H15.5C14.67 16 14 15.33 14 14.5Z"
-				stroke="#DA627D"
-				stroke-width="2"
-				stroke-linecap="round"
-				stroke-linejoin="round"
-			/>
-			<path
-				d="M15.5 19H14V20.5C14 21.33 14.67 22 15.5 22C16.33 22 17 21.33 17 20.5C17 19.67 16.33 19 15.5 19Z"
-				stroke="#DA627D"
-				stroke-width="2"
-				stroke-linecap="round"
-				stroke-linejoin="round"
-			/>
-			<path
-				d="M10 9.5C10 8.67 9.33 8 8.5 8H3.5C2.67 8 2 8.67 2 9.5C2 10.33 2.67 11 3.5 11H8.5C9.33 11 10 10.33 10 9.5Z"
-				stroke="#DA627D"
-				stroke-width="2"
-				stroke-linecap="round"
-				stroke-linejoin="round"
-			/>
-			<path
-				d="M8.5 5H10V3.5C10 2.67 9.33 2 8.5 2C7.67 2 7 2.67 7 3.5C7 4.33 7.67 5 8.5 5Z"
-				stroke="#DA627D"
-				stroke-width="2"
-				stroke-linecap="round"
-				stroke-linejoin="round"
-			/>
-		</svg>
+		<div class="flex w-6 h-6 cursor-pointer items-center justify-center">
+			<Settings />
+		</div>
 	</div>
 
-	<div class="flex w-6 h-6 cursor-pointer items-center justify-center">
-		<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
-			<path fill-rule="evenodd" clip-rule="evenodd" d="M11.3135 1.04037C10.6783 1.04037 10.1276 1.48015 9.98717 2.09969L9.60624 3.77995C8.99984 3.9563 8.42136 4.1978 7.87898 4.4962L6.42136 3.57735C5.88397 3.2386 5.18365 3.31699 4.73445 3.76617L3.7647 4.73593C3.31552 5.18511 3.23712 5.88543 3.57589 6.42283L4.49507 7.88097C4.19691 8.42319 3.95563 9.0015 3.77946 9.60769L2.09934 9.98859C1.47981 10.129 1.04004 10.6797 1.04004 11.3149V12.6863C1.04004 13.3216 1.47981 13.8722 2.09934 14.0127L3.77965 14.3936C3.95594 15 4.19736 15.5784 4.49566 16.1208L3.57664 17.5787C3.23787 18.116 3.31627 18.8163 3.76546 19.2656L4.73522 20.2354C5.1844 20.6845 5.88472 20.7629 6.42211 20.4242L7.8801 19.5051C8.42214 19.8032 9.00026 20.0445 9.60624 20.2206L9.98717 21.901C10.1276 22.5205 10.6783 22.9603 11.3135 22.9603H12.6849C13.3202 22.9603 13.8708 22.5205 14.0113 21.901L14.3921 20.2213C14.9986 20.0451 15.5772 19.8037 16.1197 19.5054L17.5776 20.4245C18.1149 20.7632 18.8152 20.6848 19.2645 20.2357L20.2342 19.2659C20.6834 18.8166 20.7618 18.1163 20.423 17.579L19.5043 16.1216C19.8029 15.579 20.0445 15.0002 20.2208 14.3935L21.9006 14.0127C22.5202 13.8722 22.96 13.3216 22.96 12.6863V11.3149C22.96 10.6797 22.5202 10.129 21.9006 9.98859L20.221 9.6078C20.0448 9.00124 19.8034 8.42262 19.505 7.88011L20.4237 6.42251C20.7626 5.88511 20.6842 5.18479 20.2349 4.73559L19.2651 3.76585C18.816 3.31667 18.1157 3.23827 17.5782 3.57703L16.1208 4.49582C15.578 4.19724 14.999 3.95566 14.3921 3.77934L14.0113 2.09969C13.8708 1.48015 13.3202 1.04037 12.6849 1.04037H11.3135ZM7.87285 6.10001C8.71558 5.50942 9.69064 5.09478 10.7447 4.90942L11.3135 2.40038H12.6849L13.2537 4.90905C14.3083 5.09419 15.2838 5.50883 16.127 6.09958L18.3035 4.72751L19.2733 5.69726L17.9011 7.87387C18.4917 8.71676 18.9062 9.69199 19.0914 10.7462L21.6 11.3149V12.6863L19.0912 13.2551C18.9059 14.3095 18.4912 15.2848 17.9005 16.1277L19.2725 18.3043L18.3027 19.2739L16.1259 17.9018C15.2831 18.4922 14.3079 18.9066 13.2537 19.0917L12.6849 21.6003H11.3135L10.7447 19.0912C9.69104 18.9059 8.71635 18.4915 7.87386 17.9013L5.69688 19.2736L4.72712 18.3038L6.09941 16.127C5.50896 15.2843 5.09445 14.3092 4.9092 13.2552L2.40003 12.6863V11.3149L4.90909 10.7461C5.09421 9.69223 5.50853 8.71732 6.09874 7.87463L4.72637 5.69759L5.69613 4.72785L7.87285 6.10001ZM14.4399 12.0001C14.4399 13.3476 13.3476 14.44 12.0001 14.44C10.6526 14.44 9.56021 13.3476 9.56021 12.0001C9.56021 10.6526 10.6526 9.56025 12.0001 9.56025C13.3476 9.56025 14.4399 10.6526 14.4399 12.0001ZM15.8799 12.0001C15.8799 14.1429 14.1429 15.88 12.0001 15.88C9.85728 15.88 8.12021 14.1429 8.12021 12.0001C8.12021 9.85734 9.85728 8.12025 12.0001 8.12025C14.1429 8.12025 15.8799 9.85734 15.8799 12.0001Z" fill="#586F7C"/>
-			</svg>			
+	<h2 class="text-2xl font-semibold">Bibliothek</h2>
+
+	<div class="flex w-full space-x-2 items-center justify-between">
+		<Input type="email" placeholder="Finde dein Lernset" class="w-full" />
+		<Button size="icon" class="shrink-0" variant="outline"><MagnifyingGlass /></Button>
 	</div>
-</div>	
 
-<Input type="email" placeholder="email" class="max-w-xs" />
+	<h4 class="text-md font-medium p-1">Zuletzt benutzt</h4>
 
-<table border="1">
-    {#each data.collections as collection}
-    <th>{collection.name}</th>
-    {/each}
-    <tr>
-        {#each data.collections as collection}
-        <td><a href="/train/{collection.id}">Train</a></td>
-        {/each}
-    </tr>
-</table>
+	<div class="space-y-2 w-full">
+		{#each data.collections as collection}
+			<div
+				on:click={(e) => {
+					window.location.href = '/train/{collection.id}';
+				}}
+				class="w-full p-4 border border-[#DA627D] rounded-[6px] space-y-1"
+			>
+				<div class="flex text-[#DA627D] items-center text-sm space-x-1">
+					<div class=" flex items-center justify-center">
+						<ArrowTopRight />
+					</div>
+					<div>4 days</div>
+				</div>
+
+				<div class="text-sm font-semibold">{collection.name}</div>
+				<div class="p-0.5 text-sm w-20 rounded-md bg-slate-100 flex justify-center items-center">
+					{collection.card_ids.length} Begriffe
+				</div>
+				<div class="w-full overflow-hidden truncate text-slate-400 h-6 flex items-end text-xs">
+					Zuletzt gelernt am {collection.created}
+				</div>
+			</div>
+		{/each}
+	</div>
 </div>
