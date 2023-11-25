@@ -6,6 +6,7 @@
 	import Button from '$lib/components/ui/button/button.svelte';
 	import type { Card } from '$lib/types/Card';
 	import type { PageData } from './$types';
+	import ArrowLeft from "$lib/components/icons/ArrowLeft.svelte";
 
 	export let data: PageData;
 
@@ -17,7 +18,7 @@
 	let selectedAnswer: string;
 	let answerIndex: number;
 
-	let quizCompleted = true;
+	let quizCompleted = false;
 
 	$: answerPossibilities = currentQuestion ? getAnswerPossibilities(currentQuestion) : [];
 
@@ -86,10 +87,19 @@
 		selectedAnswer = '';
 		nextQuestion();
 	};
+
+	const goBack = () => {
+		window.location.href = '/';
+	};
 </script>
 
 <div class="max-w-md py-3 px-5 space-y-3">
 	<HeaderMenu />
+	<Button on:click={goBack} variant="link" class="h-8 p-0 flex items-center">
+		<div class="mr-2"><ArrowLeft /></div>
+		Beenden
+	</Button>
+
 	{#if quizCompleted}
 		<div class="w-full flex items-center justify-between">
 			<div class="text-xl font-medium">Quiz Completed</div>
@@ -120,14 +130,14 @@
 					<div class="text-sm text-slate-400">
 						{previousQuestions.indexOf(previousQuestion) + 1} / {data.collection.card_ids.length}
 					</div>
-					<div class="text-2xl font-normal text-green-700">{previousQuestion.question}</div>
+					<div class="text-2xl font-normal text-green-700">{@html previousQuestion.question}</div>
 				</div>
 			{:else}
 				<div class="w-full h-20 border rounded shadow-sm p-4 bg-green-50 border-red-500">
 					<div class="text-sm text-slate-400">
 						{previousQuestions.indexOf(previousQuestion) + 1} / {data.collection.card_ids.length}
 					</div>
-					<div class="text-2xl font-normal text-red-700">{previousQuestion.question}</div>
+					<div class="text-2xl font-normal text-red-700">{@html previousQuestion.question}</div>
 				</div>
 			{/if}
 		{/each}
@@ -143,7 +153,7 @@
 			<div class="text-sm text-slate-400">
 				{answerIndex} / {data.collection.card_ids.length}
 			</div>
-			<div class="text-2xl font-normal text-[#DA627D]">{currentQuestion?.question}</div>
+			<div class="text-2xl font-normal text-[#DA627D]">{@html currentQuestion?.question}</div>
 		</div>
 
 		<div class="w-full flex flex-col space-y-2">
@@ -158,7 +168,7 @@
 					{:else}
 						<div class="mr-2 h-4 w-4 rounded-full border"></div>
 					{/if}
-					<div>{answerPossibility}</div>
+					<div>{@html answerPossibility}</div>
 				</Button>
 			{/each}
 		</div>

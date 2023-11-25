@@ -99,7 +99,7 @@
 		<div class="w-6 h-6 justify-center items-center flex">
 			<TimerIcon />
 		</div>
-		<div class="text-black text-lg font-medium leading-tight">Schnelligskeitstest</div>
+		<div class="text-black text-lg font-medium leading-tight">Schnelligkeitstest</div>
 	</div>
 	<div
 		class="w-full h-16 p-4 bg-white rounded-md shadow border border-gray-500 justify-start items-center gap-3 inline-flex"

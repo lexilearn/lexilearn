@@ -8,7 +8,7 @@
 </script>
 
 <div class="h-screen w-full flex flex-col space-y-3 items-center justify-center">
-	<Logo />
+	<div class="w-12 h-12 flex items-center justify-center shrink-0"><Logo /></div>
 	<Title title="Login to account" />
 	<div class="w-64 space-y-3">
 		<GoogleLoginButton />

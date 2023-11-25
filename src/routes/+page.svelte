@@ -43,7 +43,7 @@
 					{collection.card_ids.length} Begriffe
 				</div>
 				<div class="w-full overflow-hidden truncate text-slate-400 h-6 flex items-end text-xs">
-					Zuletzt gelernt am {collection.created}
+					Zuletzt bearbeitet am {new Date(collection.updated).toLocaleDateString()}
 				</div>
 			</div>
 		{/each}
