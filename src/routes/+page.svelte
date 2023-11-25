@@ -7,25 +7,18 @@
 	import ArrowTopRight from '$lib/components/icons/ArrowTopRight.svelte';
 	import Logo from '$lib/components/icons/Logo.svelte';
 	import Settings from '$lib/components/icons/Settings.svelte';
+	import Footer from '$lib/components/menu/footer.svelte';
+	import HeaderMenu from '$lib/components/menu/HeaderMenu.svelte';
 	export let data: PageData;
 </script>
 
 <div class="max-w-md py-3 px-5 space-y-3">
-	<div class="flex w-full border-b pb-2 justify-between h-10 items-center">
-		<div class="h-6 w-6 cursor-pointer flex items-center justify-center">
-			<Logo />
-		</div>
-
-		<div class="flex w-6 h-6 cursor-pointer items-center justify-center">
-			<Settings />
-		</div>
-	</div>
-
+	<HeaderMenu />
 	<h2 class="text-2xl font-semibold">Bibliothek</h2>
 
 	<div class="flex w-full space-x-2 items-center justify-between">
 		<Input type="email" placeholder="Finde dein Lernset" class="w-full" />
-		<Button size="icon" class="shrink-0" variant="outline"><MagnifyingGlass /></Button>
+		<Button size="icon" class="shrink-0" variant="default"><MagnifyingGlass /></Button>
 	</div>
 
 	<h4 class="text-md font-medium p-1">Zuletzt benutzt</h4>
@@ -34,7 +27,7 @@
 		{#each data.collections as collection}
 			<div
 				on:click={(e) => {
-					window.location.href = '/train/{collection.id}';
+					window.location.href = "/train/" + collection.id;
 				}}
 				class="w-full p-4 border border-[#DA627D] rounded-[6px] space-y-1"
 			>
@@ -56,3 +49,5 @@
 		{/each}
 	</div>
 </div>
+
+<Footer />
