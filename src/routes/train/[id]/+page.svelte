@@ -81,7 +81,11 @@
 		</div>
 		<div class="text-black text-lg font-medium leading-tight">Karteikarten</div>
 	</div>
+	
 	<div
+		on:click={() => {
+			window.location.href = '/train/' + data.collection.id + '/multiple-choice';
+		}}
 		class="w-full h-16 p-4 bg-white rounded-md shadow border border-gray-500 justify-start items-center gap-3 inline-flex"
 	>
 		<div class="w-6 h-6 justify-center items-center flex">
