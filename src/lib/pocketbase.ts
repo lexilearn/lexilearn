@@ -1,8 +1,5 @@
-import { PUBLIC_POCKETBASE_URL } from '$env/static/public'
-import PocketBase from 'pocketbase'
+import PocketBase from 'pocketbase';
 
-export function createInstance() {
-  return new PocketBase(PUBLIC_POCKETBASE_URL)
-}
+export const DB_URL = "https://pocketbase.oskar.global";
+export const pb = new PocketBase(DB_URL);
 
-export const pb = createInstance()

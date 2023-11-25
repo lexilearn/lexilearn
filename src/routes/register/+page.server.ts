@@ -1,8 +1,9 @@
 import { redirect } from '@sveltejs/kit'
 import type { Actions } from './$types'
+import {pb} from "$lib/pocketbase";
 
 export const actions: Actions = {
-  default: async ({ locals, request }) => {
+  default: async ({ request }) => {
     const data = Object.fromEntries(await request.formData()) as {
       email: string
       password: string
@@ -10,8 +11,8 @@ export const actions: Actions = {
     }
 
     try {
-      await locals.pb.collection('users').create(data)
-      await locals.pb
+      await pb.collection('users').create(data)
+      await pb
         .collection('users')
         .authWithPassword(data.email, data.password)
     } catch (e) {

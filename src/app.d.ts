@@ -3,10 +3,7 @@
 // and what to do when importing types
 declare namespace App {
     // interface Error {}
-    interface Locals {
-        pb: import('pocketbase').default
-        user: import('pocketbase').default['authStore']['model']
-    }
+    // interface Locals {}
     // interface PageData {}
     // interface Platform {}
 }

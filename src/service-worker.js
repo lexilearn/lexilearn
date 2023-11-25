@@ -1,7 +1,10 @@
-import { pageCache, imageCache, offlineFallback, staticResourceCache, googleFontsCache } from "workbox-recipes"
+import { pageCache, imageCache, staticResourceCache, googleFontsCache } from "workbox-recipes"
 
-pageCache()
-imageCache()
+// eslint-disable-next-line no-constant-condition
+if (false) {
+    pageCache()
+    imageCache()
 // offlineFallback()
-staticResourceCache()
-googleFontsCache()
+    staticResourceCache()
+    googleFontsCache()
+}

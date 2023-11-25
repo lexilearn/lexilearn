@@ -3,14 +3,14 @@
 	export let data: PageData;
 </script>
 
-<table>
+<table border="1">
 	<tr>
-		{#each data.cards as card}
-			<td>{@html card.question}</td>
+		{#each data.collections as collection}
+			<td>{@html collection.}</td>
 		{/each}
 	</tr>
 	<tr>
-		{#each data.cards as card}
+		{#each data.collections as card}
 			<td>{@html card.answer}</td>
 		{/each}
 	</tr>
