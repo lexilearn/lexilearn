@@ -16,7 +16,7 @@
 			<GlobeIcon />
 		</Button>
 	</a>
-	<a href="/settings">
+	<a href="/account">
 		<Button variant="ghost" size="icon">
 			<UserIcon />
 		</Button>

@@ -133,7 +133,7 @@
 					<div class="text-2xl font-normal text-green-700">{@html previousQuestion.question}</div>
 				</div>
 			{:else}
-				<div class="w-full h-20 border rounded shadow-sm p-4 bg-green-50 border-red-500">
+				<div class="w-full h-20 border rounded shadow-sm p-4 bg-red-50 border-red-500">
 					<div class="text-sm text-slate-400">
 						{previousQuestions.indexOf(previousQuestion) + 1} / {data.collection.card_ids.length}
 					</div>

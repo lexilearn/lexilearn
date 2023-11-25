@@ -1,10 +1,10 @@
 <script>
-	import Header from '$lib/components/header.svelte';
 	import AccessibilityIcon from '$lib/components/icons/AccessibilityIcon.svelte';
 	import RocketIcon from '$lib/components/icons/RocketIcon.svelte';
 	import StarIcon from '$lib/components/icons/StarIcon.svelte';
 	import HeaderMenu from '$lib/components/menu/HeaderMenu.svelte';
 	import Button from '$lib/components/ui/button/button.svelte';
+    import {currentUser} from "$lib/stores/user";
 </script>
 
 <div class="max-w-md py-3 px-5 space-y-3">
@@ -12,7 +12,7 @@
 
 	<div class="space-y-3 border-b">
 		<h1 class="text-2xl font-semibold w-full overflow-hidden">Account</h1>
-		<div class="font-light">account@mail.com</div>
+		<div class="font-light">{$currentUser.email}</div>
 		<Button class="w-full" size="sm">Freund einladen</Button>
 	</div>
 
