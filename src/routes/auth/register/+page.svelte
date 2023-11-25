@@ -25,7 +25,7 @@
         <Input type="password" placeholder="Password" class="h-9" />
         <Button class="w-full" size="sm">Register</Button>
         <div class="w-full flex items-center">
-            <a href="/auth/register">
+            <a href="/auth/login">
                 <div class="text-slate-600 text-xs underline">Already have an account</div>
             </a>
         </div>
