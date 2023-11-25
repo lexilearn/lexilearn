@@ -34,7 +34,7 @@
 	<div class="w-full flex justify-center">
 		<div class="w-24 flex items-center justify-between">
 			<Button size="sm" class="p-0 w-6 h-6" variant="ghost"><ArrowLeft /></Button>
-			<div>1/10</div>
+			<div class="tracking-widest">1/{data.collection.card_ids.length}</div>
 			<Button size="sm" class="p-0 w-6 h-6" variant="ghost"><ArrowRight /></Button>
 		</div>
 	</div>
