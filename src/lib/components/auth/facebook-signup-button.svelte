@@ -1,7 +1,6 @@
 <script lang="ts">
 	import FacebookIcon from "../icons/FacebookIcon.svelte";
-	import GoogleIcon from "../icons/GoogleIcon.svelte";
-import Button from "../ui/button/button.svelte";
+  import Button from "../ui/button/button.svelte";
 
 </script>
 

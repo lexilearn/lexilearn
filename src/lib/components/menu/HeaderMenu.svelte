@@ -1,7 +1,6 @@
 <script lang="ts">
 	import Logo from '../icons/Logo.svelte';
 	import Settings from '../icons/Settings.svelte';
-	import Button from '../ui/button/button.svelte';
 </script>
 
 <div class="flex w-full border-b pb-2 justify-between h-10 items-center">

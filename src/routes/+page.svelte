@@ -2,12 +2,9 @@
 	import type { PageData } from './$types';
 	import { Input } from '$lib/components/ui/input';
 	import Button from '$lib/components/ui/button/button.svelte';
-	import * as Card from '$lib/components/ui/card';
-	import MagnifyingGlass from '$lib/components/icons/MagnifyingGlass.svelte';
+  import MagnifyingGlass from '$lib/components/icons/MagnifyingGlass.svelte';
 	import ArrowTopRight from '$lib/components/icons/ArrowTopRight.svelte';
-	import Logo from '$lib/components/icons/Logo.svelte';
-	import Settings from '$lib/components/icons/Settings.svelte';
-	import Footer from '$lib/components/menu/footer.svelte';
+  import Footer from '$lib/components/menu/footer.svelte';
 	import HeaderMenu from '$lib/components/menu/HeaderMenu.svelte';
 	export let data: PageData;
 </script>
@@ -26,9 +23,7 @@
 	<div class="space-y-2 w-full">
 		{#each data.collections as collection}
 			<div
-				on:click={(e) => {
-					window.location.href = "/train/" + collection.id;
-				}}
+				on:click={() => window.location.href = "/train/" + collection.id}
 				class="w-full p-4 border border-[#DA627D] rounded-[6px] space-y-1"
 			>
 				<div class="flex text-[#DA627D] items-center text-sm space-x-1">

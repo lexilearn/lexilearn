@@ -1,4 +1,4 @@
-import { pageCache, imageCache, offlineFallback, staticResourceCache, googleFontsCache } from "workbox-recipes"
+import { pageCache, imageCache, staticResourceCache, googleFontsCache } from "workbox-recipes"
 
 pageCache()
 imageCache()

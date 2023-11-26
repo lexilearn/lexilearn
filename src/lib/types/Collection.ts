@@ -1,5 +1,4 @@
 import type {Card} from "$lib/types/Card";
-import type PocketBase from "pocketbase";
 import {pb} from "$lib/helpers";
 
 /**

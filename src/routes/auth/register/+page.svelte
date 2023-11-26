@@ -1,8 +1,6 @@
 <script lang="ts">
-	import FacebookLoginButton from '$lib/components/auth/facebook-login-button.svelte';
-	import FacebookSignupButton from '$lib/components/auth/facebook-signup-button.svelte';
-	import GoogleLoginButton from '$lib/components/auth/google-login-button.svelte';
-	import GoogleSignupButton from '$lib/components/auth/google-signup-button.svelte';
+  import FacebookSignupButton from '$lib/components/auth/facebook-signup-button.svelte';
+  import GoogleSignupButton from '$lib/components/auth/google-signup-button.svelte';
 	import Title from '$lib/components/auth/title.svelte';
 	import Logo from '$lib/components/icons/Logo.svelte';
 	import Button from '$lib/components/ui/button/button.svelte';
