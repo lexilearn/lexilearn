@@ -5,8 +5,9 @@
     import Logo from '$lib/components/icons/Logo.svelte';
     import Button from '$lib/components/ui/button/button.svelte';
     import Input from '$lib/components/ui/input/input.svelte';
-    import {applyAction, enhance} from "$app/forms";
-    import {pb} from "$lib/helpers";
+    import { signIn } from "@auth/sveltekit/client";
+
+    const signInGithub = () => signIn("github", { callbackUrl: "/" });
 </script>
 
 <div class="h-screen w-full flex flex-col space-y-3 items-center justify-center">
@@ -14,12 +15,7 @@
         <Logo/>
     </div>
     <Title title="Login to account"/>
-    <form method="POST"
-          use:enhance={() => async ({ result }) => {
-                pb.authStore.loadFromCookie(document.cookie);
-                await applyAction(result);
-            }}
-          class="w-64 space-y-3">
+    <div class="w-64 space-y-3">
         <GoogleLoginButton/>
         <FacebookLoginButton/>
         <div class="flex items-center space-x-1 justify-between">
@@ -30,7 +26,7 @@
 
         <Input type="email" placeholder="name@email.com" class="h-9" name="email"/>
         <Input type="password" placeholder="Password" class="h-9" name="password"/>
-        <Button class="w-full" size="sm">Login</Button>
+        <Button on:click={signInGithub} class="w-full" size="sm">Login with GitHub</Button>
         <div class="w-full flex items-center justify-between">
             <a href="/auth/forgot-password">
                 <div class="text-slate-400 text-xs">Forgot password?</div>
@@ -39,5 +35,5 @@
                 <div class="text-slate-600 text-xs">Create an account</div>
             </a>
         </div>
-    </form>
+    </div>
 </div>
