@@ -5,6 +5,7 @@
     import HeaderMenu from "$lib/components/menu/HeaderMenu.svelte";
     import Button from "$lib/components/ui/button/button.svelte";
     import { page } from "$app/stores"
+    import { signOut } from "@auth/sveltekit/client";
 </script>
 
 <div class="max-w-md py-3 px-5 space-y-3">
@@ -13,6 +14,8 @@
     <div class="space-y-3 border-b">
         <h1 class="text-2xl font-semibold w-full overflow-hidden">Account</h1>
         <div class="font-light">{$page.data.session?.user?.email}</div>
+
+        <Button on:click={() => signOut()} class="w-full bg-[#DA627D]" size="sm">Abmelden</Button>
         <Button class="w-full" size="sm">Freund einladen</Button>
     </div>
 

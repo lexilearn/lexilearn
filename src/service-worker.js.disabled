@@ -2,6 +2,6 @@ import { pageCache, imageCache, staticResourceCache, googleFontsCache } from "wo
 
 pageCache()
 imageCache()
-// offlineFallback()
+// offlineFalback()
 staticResourceCache()
 googleFontsCache()
